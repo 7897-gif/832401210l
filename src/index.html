@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前后端分离计算器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 计算器主体 -->
+        <div class="calculator">
+            <div class="display">
+                <div class="expression" id="expression"></div>
+                <div class="result" id="result">0</div>
+            </div>
+            <div class="buttons">
+                <button class="btn btn-clear" onclick="clearAll()">AC</button>
+                <button class="btn btn-back" onclick="backspace()">←</button>
+                <button class="btn btn-op" onclick="appendChar('(')">(</button>
+                <button class="btn btn-op" onclick="appendChar(')')">)</button>
+
+                <button class="btn btn-num" onclick="appendChar('7')">7</button>
+                <button class="btn btn-num" onclick="appendChar('8')">8</button>
+                <button class="btn btn-num" onclick="appendChar('9')">9</button>
+                <button class="btn btn-op" onclick="appendChar('/')">÷</button>
+
+                <button class="btn btn-num" onclick="appendChar('4')">4</button>
+                <button class="btn btn-num" onclick="appendChar('5')">5</button>
+                <button class="btn btn-num" onclick="appendChar('6')">6</button>
+                <button class="btn btn-op" onclick="appendChar('*')">×</button>
+
+                <button class="btn btn-num" onclick="appendChar('1')">1</button>
+                <button class="btn btn-num" onclick="appendChar('2')">2</button>
+                <button class="btn btn-num" onclick="appendChar('3')">3</button>
+                <button class="btn btn-op" onclick="appendChar('-')">−</button>
+
+                <button class="btn btn-num" onclick="appendChar('0')">0</button>
+                <button class="btn btn-num" onclick="appendChar('.')">.</button>
+                <button class="btn btn-equal" onclick="calculate()">=</button>
+                <button class="btn btn-op" onclick="appendChar('+')">+</button>
+            </div>
+        </div>
+
+        <!-- 历史记录面板 -->
+        <div class="history-panel">
+            <div class="history-header">
+                <h3>计算历史</h3>
+                <button class="btn-clear-all" onclick="clearAllHistory()">清空全部</button>
+            </div>
+            <div class="history-list" id="historyList">
+                <div class="empty-tip">暂无历史记录</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
